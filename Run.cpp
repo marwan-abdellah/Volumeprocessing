@@ -3,6 +3,8 @@
 #include "VolumeWriter.h"
 #include "CreateSphereVolume.h"
 #include "CreateSpheres.h"
+#include "CreateCellWithBranching.h"
+#include "CreateBigEllipsoid.h"
 #include "Globals.h"
 
 using namespace std;
@@ -17,10 +19,13 @@ int main()
     iHeight = 256;
     iDepth = 256;
 
-    //char* volumeSphere = CreateSphere(iWidth, iHeight, iDepth);
+    // char* volumeSphere = CreateMultipleSpheres(iWidth, iHeight, iDepth);
+    // char* volumeSphere = CreateCellWithBranch(iWidth, iHeight, iDepth);
 
-    char* volumeSphere = CreateMultipleSpheres(iWidth, iHeight, iDepth);
-    VolumeWriter(volumeSphere, iWidth, iHeight, iDepth, "100.raw");
+    char* volumeSphere = CreateBigEllipsoid(iWidth, iHeight, iDepth,
+                                            iWidth / 2, iHeight/4, iDepth/6);
+
+    VolumeWriter(volumeSphere, iWidth, iHeight, iDepth, "P2.raw");
 
     return 0;
 }
