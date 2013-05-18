@@ -41,7 +41,7 @@ char*** CreateSingleSphere(const int volWidth,
                 float pVector = sqrt((i * i) + (j * j) + (k * k));
 
                 // Sphere radius
-                float sRadius = volWidth / 2;
+                float sRadius = (volWidth / 2);
 
                 if (pVector < sRadius)
                     pData_3D[i + volWidth / 2]
@@ -140,7 +140,7 @@ char* CreateMultipleSpheres(const int volWidth,
     while (sphereLimit)
     {
         // Generate spheres between 10 and 20 micron
-        const int sphereRadius = rand() % 20 + 10;
+        const int sphereRadius = rand() % 40 + 10;
 
 
         INFO("Small sphere creation ... ");

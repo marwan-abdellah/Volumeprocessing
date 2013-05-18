@@ -2,6 +2,7 @@
 #include "VolumeReader.h"
 #include "VolumeWriter.h"
 #include "CreateSphereVolume.h"
+#include "CreateNoiseVolume.h"
 #include "CreateSpheres.h"
 #include "Globals.h"
 
@@ -19,8 +20,10 @@ int main()
 
     //char* volumeSphere = CreateSphere(iWidth, iHeight, iDepth);
 
-    char* volumeSphere = CreateMultipleSpheres(iWidth, iHeight, iDepth);
-    VolumeWriter(volumeSphere, iWidth, iHeight, iDepth, "100.raw");
+    // char* volumeSphere = CreateMultipleSpheres(iWidth, iHeight, iDepth);
+
+    char* volumeCube = CreateNoiseVolume(iWidth, iHeight, iDepth);
+    VolumeWriter(volumeCube, iWidth, iHeight, iDepth, "Noise2.raw");
 
     return 0;
 }
