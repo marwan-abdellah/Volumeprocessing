@@ -118,6 +118,7 @@ char* CreateMultipleSpheres(const int volWidth,
 
     // Create the big volume
     char*** pData_3D;
+
     pData_3D = (char***) malloc(sizeof(char**) * volWidth);
     for (int i = 0; i < volWidth; i++)
     {

@@ -1,5 +1,4 @@
-#ifndef CREATENOISEVOLUME_H
-#define CREATENOISEVOLUME_H
+#include "NoiseVolume.h"
 
 #include "MACROS.h"
 #include "Globals.h"
@@ -9,22 +8,18 @@
 #include <stdio.h>
 #include <math.h>
 
-#include "simplexnoise.h"
-#include "simplextextures.h"
+#include "SimplexNoise.h"
+#include "SimplexTextures.h"
 
 using namespace std;
 
-float fAbs (float val)
+float AbsoluteValue(float value)
 {
-    if (val > 0)
-        return val;
+    if (value > 0)
+        return value;
     else
-        return val * -1;
+        return value * -1;
 }
-
-char* CreateNoiseVolume(const int volWidth,
-                        const int volHeight,
-                        const int volDepth);
 
 char* CreateNoiseVolume(const int volWidth,
                         const int volHeight,
@@ -42,7 +37,7 @@ char* CreateNoiseVolume(const int volWidth,
         for (int j = 0; j < volHeight; j++)
             for (int k = 0; k < volDepth; k++)
             {
-                pData_1D[index] = 256 * fAbs(octave_noise_3d(octaves,
+                pData_1D[index] = 256 * AbsoluteValue(octave_noise_3d(octaves,
                                                   persistence,
                                                   scale,
                                                   i,
@@ -54,5 +49,3 @@ char* CreateNoiseVolume(const int volWidth,
 
     return pData_1D;
 }
-
-#endif // CREATENOISEVOLUME_H

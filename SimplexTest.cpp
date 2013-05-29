@@ -14,15 +14,17 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  *****************************************************************************/
 
-
-#include "simplexnoise.h"
-#include "simplextextures.h"
+#include "SimplexNoise.h"
+#include "SimplexTextures.h"
 #include <iostream>
 
 int main() {
-    int iterations = 5;
 
-    std::cout << "Generating " << iterations*iterations*iterations*iterations << " iterations." << std::endl;
+    // Number of iterations
+    const int iterations = 5;
+    const int totalIterations = iterations * iterations * iterations * iterations;
+
+    std::cout << "Generating " << totalIterations << " iterations." << std::endl;
 
     for(int h=0; h < iterations; ++h) {
         for(int i=0; i < iterations; ++i) {

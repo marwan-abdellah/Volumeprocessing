@@ -72,7 +72,15 @@ SET(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/CMake)
 #INCLUDE(Find_Boost)
 
 SET(CPP_SOURCES
-Run.cpp
+VolumeReader.cpp
+VolumeWriter.cpp
+SimplexNoise.cpp
+SimplexTextures.cpp
+Sphere.cpp
+Ellipsoid.cpp
+NoiseVolume.cpp
+Volume.cpp
+CreateVolume.cpp
 )
 
 # Include directories 
@@ -87,5 +95,14 @@ set(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS}")
 #########################################################
 #! Link the executable against the cuYURI library
 #########################################################
-ADD_EXECUTABLE(run Run.cpp simplexnoise.cpp simplextextures.cpp)
-ADD_EXECUTABLE(Noise SimplexTest.cpp simplexnoise.cpp simplextextures.cpp)
+ADD_EXECUTABLE(run Run.cpp ${CPP_SOURCES})
+ADD_EXECUTABLE(Noise SimplexTest.cpp ${CPP_SOURCES})
+
+ADD_EXECUTABLE(ReadWriteVolume ReadWriteVolume_Test.cpp ${CPP_SOURCES})
+ADD_EXECUTABLE(SolidSphere SolidSphere_Test.cpp ${CPP_SOURCES})
+ADD_EXECUTABLE(ShellSphere ShellSphere_Test.cpp ${CPP_SOURCES})
+ADD_EXECUTABLE(SolidEllipsoid SolidEllipsoid_Test.cpp ${CPP_SOURCES})
+
+ADD_EXECUTABLE(VolumeSpheres SpheresVolume_Test.cpp ${CPP_SOURCES})
+ADD_EXECUTABLE(VolumeEllipoids EllipsoidsVolume_Test.cpp ${CPP_SOURCES})
+

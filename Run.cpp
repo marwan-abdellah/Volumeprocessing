@@ -2,7 +2,7 @@
 #include "VolumeReader.h"
 #include "VolumeWriter.h"
 #include "CreateSphereVolume.h"
-#include "CreateNoiseVolume.h"
+#include "NoiseVolume.h"
 #include "CreateSpheres.h"
 #include "CreateCellWithBranching.h"
 #include "CreateBigEllipsoid.h"
@@ -16,9 +16,9 @@ int main()
 
     // char* volumeFile = ReadVolume("/home/abdellah/Software/Datasets/CTData/CTData");
 
-    iWidth = 256;
-    iHeight = 256;
-    iDepth = 256;
+    int iWidth = 256;
+    int iHeight = 256;
+    int iDepth = 256;
 
     // char* volumeSphere = CreateMultipleSpheres(iWidth, iHeight, iDepth);
     // char* volumeSphere = CreateCellWithBranch(iWidth, iHeight, iDepth);

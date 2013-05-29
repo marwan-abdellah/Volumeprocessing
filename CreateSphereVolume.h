@@ -1,5 +1,6 @@
 #ifndef CREATESPHEREVOLUME_H
 #define CREATESPHEREVOLUME_H
+
 #include "MACROS.h"
 #include "Globals.h"
 
