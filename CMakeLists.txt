@@ -87,4 +87,5 @@ set(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS}")
 #########################################################
 #! Link the executable against the cuYURI library
 #########################################################
-ADD_EXECUTABLE(run Run.cpp)
+ADD_EXECUTABLE(run Run.cpp simplexnoise.cpp simplextextures.cpp)
+ADD_EXECUTABLE(Noise SimplexTest.cpp simplexnoise.cpp simplextextures.cpp)

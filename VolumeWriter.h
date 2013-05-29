@@ -20,7 +20,7 @@ void VolumeWriter(const char* volData,
                   const int volDepth,
                   char* fileName)
 {
-    ofstream fileStream(fileName, ios::out | ios::app | ios::binary);
+    ofstream fileStream(fileName, ios::out | ios::binary);
 
     int index = 0;
     for (int i = 0; i < volWidth; i++)

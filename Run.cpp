@@ -2,6 +2,7 @@
 #include "VolumeReader.h"
 #include "VolumeWriter.h"
 #include "CreateSphereVolume.h"
+#include "CreateNoiseVolume.h"
 #include "CreateSpheres.h"
 #include "CreateCellWithBranching.h"
 #include "CreateBigEllipsoid.h"
@@ -22,10 +23,12 @@ int main()
     // char* volumeSphere = CreateMultipleSpheres(iWidth, iHeight, iDepth);
     // char* volumeSphere = CreateCellWithBranch(iWidth, iHeight, iDepth);
 
-    char* volumeSphere = CreateBigEllipsoid(iWidth, iHeight, iDepth,
-                                            iWidth / 2, iHeight/4, iDepth/6);
 
-    VolumeWriter(volumeSphere, iWidth, iHeight, iDepth, "P2.raw");
+    // char* volumeSphere = CreateMultipleSpheres(iWidth, iHeight, iDepth);
+
+    char* volumeCube = CreateNoiseVolume(iWidth, iHeight, iDepth);
+    VolumeWriter(volumeCube, iWidth, iHeight, iDepth, "Noise2.raw");
+
 
     return 0;
 }
